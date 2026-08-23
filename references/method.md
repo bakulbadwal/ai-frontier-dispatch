@@ -17,6 +17,7 @@ Gather these streams independently before ranking:
 - AI-native builder and researcher activity.
 - Hacker News front page, `/show`, and recent high-signal results.
 - Personalized GitHub and Hugging Face releases/trending candidates.
+- Model routers, coding-harness usage leaderboards, and independent benchmarks.
 - Reputable AI funding, partnership, policy, and regulation coverage.
 - Consulting, macro, capital-markets, M&A/VC, career, and established-stack sources.
 - Optional live-X pass through Grok.
@@ -46,6 +47,20 @@ Treat stars, likes, downloads, and trending placement as discovery signals—not
 Report what was excluded and why rather than dropping it silently, and note when a filter could not be applied at all: a repository with issues disabled cannot be scored on engagement, which is a caveat rather than a pass.
 
 For model hubs, report new frontier-scale open releases, large movers against the previous run's baseline, and entries that tell a story — a community distill or quantization of a frontier model, a lab's weights landing after an API-only launch, a licensing change. Carry `createdAt` so a stale-but-charting model is not written up as new. Watch the **download-to-like ratio**: an extreme skew toward downloads indicates automated or pipeline pulling rather than community interest, and the two mean different things. Skip perennial small-model and OCR filler unless it signals a trend.
+
+### The distribution layer: catching unannounced releases
+
+Most streams above are announcement-shaped—newsrooms, front pages, press, social. A growing share of consequential model releases have **no announcement at all**. They appear on a router under a codename, often free, and are discovered through usage rather than publicity. A sweep built only on announcements is structurally blind to them, and will report a quiet week while a frontier-class model is being used at scale.
+
+Sweep each run and report only what changed:
+
+- **Router new-and-trending listings.** The newest-models list is where stealth or cloaked models surface first. Router rankings by **token share** show what people actually route production work to—a materially better signal than stars, likes, or benchmark claims.
+- **Coding-harness usage leaderboards.** Public usage and stats pages for agent harnesses and routers show what builders actually run, in numbers rather than sentiment.
+- **Independent benchmark aggregators.** Their primary job is as the antidote to vendor self-claims. When a lab asserts a leaderboard position, verify it independently before repeating it; if it is not independently confirmed, label it self-reported and uncorroborated.
+- **Human-preference arenas.** Slow-moving. Report only a genuine leadership change, not routine churn.
+- **Agentic-coding benchmarks.** Report real state-of-the-art changes; ignore ordinary movement.
+
+Discipline for this stream: it is a **discovery channel, not an authority**. Token share and leaderboard placement tell you what is being used and what scores well. Neither is evidence that a model is good, safe, or of known provenance. When surfacing an unclaimed or codenamed model, state plainly that its origin is unverified, and note the fingerprinting theories rather than asserting one. **Free frontier inference is generally paid for in training data**—whenever a zero-cost model is surfaced, make the data-retention implication explicit alongside the capability, so a reader does not route sensitive work to it on the strength of the write-up. Keep this section to a few items; zero is a valid result.
 
 ## 3. Normalize and deduplicate
 
@@ -105,6 +120,7 @@ Repeated failure is a routing signal. It does not make the source unreliable; it
 - Model releases and major updates.
 - What AI-native builders are shipping or debating.
 - Personalized GitHub and Hugging Face signal.
+- Router, leaderboard, and unannounced-release signal.
 - AI funding, partnerships, policy, and regulation.
 - Two or three cross-cutting patterns.
 

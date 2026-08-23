@@ -14,6 +14,13 @@ AI Frontier Dispatch gathers frontier releases, builder signal, repositories, ma
 
 ### [Read a real digest →](digests/2026-07-28.md)
 
+## What changed in v2.1
+
+- The distribution layer is now a first-class stream: router new-and-trending listings, usage leaderboards ranked by token share, and independent benchmark aggregators.
+- Unannounced and codenamed model releases are detectable. Announcement-shaped sweeps miss them by construction.
+- Vendor leaderboard claims must be checked against an independent aggregator before they are repeated, or labelled self-reported.
+- Zero-cost inference is flagged for its data-retention implication alongside its capability.
+
 ## What changed in v2
 
 - One portable dispatch protocol instead of a Claude-only method.
@@ -47,10 +54,17 @@ Personal config and state default to `~/.ai-frontier-dispatch/`, outside the rep
 | Model releases and capability updates | Consulting and strategy |
 | What AI-native builders are shipping | Macro and investment trends |
 | Personalized GitHub and Hugging Face scout | Capital markets, M&A, PE/VC, and IPOs |
-| AI funding, partnerships, and regulation | Career-track developments |
-| Cross-cutting technical patterns | The established AI stack and thesis watch |
+| Router, leaderboard, and unannounced-release signal | Career-track developments |
+| AI funding, partnerships, and regulation | The established AI stack and thesis watch |
+| Cross-cutting technical patterns | Cross-cutting market patterns |
 
 The filter scores recency, reader relevance, and substance before spending synthesis tokens. Independent arrival across streams is a positive ranking signal. Primary evidence beats aggregator repetition, and an honest quiet section beats filler.
+
+### Catching what was never announced
+
+Most digest tooling is announcement-shaped: newsrooms, front pages, press, social. A growing share of consequential model releases have **no announcement at all** — they appear on a router under a codename, often free, and are found through usage rather than publicity. A sweep built only on announcements will report a quiet week while a frontier-class model is being used at scale.
+
+The dispatch therefore treats the distribution layer as a first-class stream: router new-and-trending listings, usage leaderboards ranked by token share, and independent benchmark aggregators used specifically to check vendor self-claims. It is a discovery channel, not an authority — placement and usage show what people run, never that a model is good, safe, or of known origin. Unclaimed models are reported as unverified in provenance, and zero-cost inference is always flagged for its data-retention implication alongside its capability.
 
 ## Method provenance
 

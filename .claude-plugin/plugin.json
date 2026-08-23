@@ -1,7 +1,7 @@
 {
   "name": "ai-frontier-dispatch",
-  "description": "A portable, source-disciplined AI + markets briefing with a Claude adapter, optional local state, source-health tracking, and explicit claim evidence.",
-  "version": "2.0.0",
+  "description": "A portable, source-disciplined AI + markets briefing with a Claude adapter, optional local state, source-health tracking, explicit claim evidence, and distribution-layer detection of unannounced model releases.",
+  "version": "2.1.0",
   "author": {
     "name": "Bakul Badwal",
     "url": "https://github.com/bakulbadwal"
@@ -15,6 +15,9 @@
     "briefing",
     "news",
     "markets",
-    "research"
+    "research",
+    "router",
+    "leaderboards",
+    "agents"
   ]
 }
