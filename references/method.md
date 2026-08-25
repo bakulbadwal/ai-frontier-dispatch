@@ -44,7 +44,18 @@ Treat stars, likes, downloads, and trending placement as discovery signals—not
 - Commits clustered into a single day or a few minutes, then no pushes while stars keep accruing.
 - A high star count on a repo whose last push is weeks old — trending in search, dead in practice.
 
-Report what was excluded and why rather than dropping it silently, and note when a filter could not be applied at all: a repository with issues disabled cannot be scored on engagement, which is a caveat rather than a pass.
+#### Clear four checks before alleging inauthentic growth
+
+The signature above produces false positives when applied on its own. Accusing a legitimate project of gaming is a worse failure than missing a farmed one, so treat these as a precondition gate rather than as supporting detail — and note that **order matters**, because the first check invalidates the most common false reading:
+
+1. **`has_issues` before `open_issues_count`.** A zero issue count is meaningless when issues are disabled: the feature is off, not unused. Run this first. A repository with issues disabled **cannot be scored on engagement at all** — that is a caveat to state plainly, never grounds for a flag.
+2. **`forks_count`.** Forks are substantially harder and costlier to fabricate than stars. A healthy fork-to-star ratio is strong evidence of genuine use, and it survives when the issue signal is unavailable.
+3. **Owner and homepage.** An `Organization` owner whose homepage resolves to that organization's own domain is close to dispositive. Confirm the owner is not who it claims to be before doubting the repository.
+4. **Commit history, not repository age.** `created_at` records when a repository became public, not when work began. A repository published last week can carry months of prior development, so read the first commit date and the contributor distribution before treating newness as suspicious.
+
+**Do not reason from a remembered sense of what star counts are plausible.** That intuition ages badly, and in the agent and skills ecosystem projects now legitimately reach very high counts within months. "This number feels too high" is not evidence. Only the ratios are evidence.
+
+Report what was excluded and why rather than dropping it silently, and record what could not be verified instead of implying fraud. When the four checks pass, report the project normally even if its growth looks extraordinary.
 
 For model hubs, report new frontier-scale open releases, large movers against the previous run's baseline, and entries that tell a story — a community distill or quantization of a frontier model, a lab's weights landing after an API-only launch, a licensing change. Carry `createdAt` so a stale-but-charting model is not written up as new. Watch the **download-to-like ratio**: an extreme skew toward downloads indicates automated or pipeline pulling rather than community interest, and the two mean different things. Skip perennial small-model and OCR filler unless it signals a trend.
 

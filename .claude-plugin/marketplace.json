@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "A portable, source-disciplined AI + markets briefing with a Claude Code adapter and distribution-layer detection of unannounced model releases.",
-    "version": "2.1.0"
+    "version": "2.1.1"
   },
   "plugins": [
     {
       "name": "ai-frontier-dispatch",
       "source": "./",
       "description": "A portable, source-disciplined AI + markets briefing with a Claude adapter, optional local state, source-health tracking, explicit claim evidence, and distribution-layer detection of unannounced model releases.",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "author": {
         "name": "Bakul Badwal",
         "url": "https://github.com/bakulbadwal"
