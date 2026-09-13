@@ -103,6 +103,13 @@ Invoke with `$ai-frontier-dispatch`, or ask for an AI Frontier Dispatch briefing
 
 Claude Code can load the repo with `claude --plugin-dir /path/to/ai-frontier-dispatch`. Codex can use the repository's `SKILL.md` directly when the repo is in its configured skills path.
 
+### What the first run is like
+
+- **With no config, it asks first.** Before the first personalized run the skill asks for your reader profile, interests, exclusions, and career track in chat, then runs. Answer in a few sentences; it does not need a form.
+- **It remembers you only if you save the config.** Copy the example config (next section) and put your answers there, or you will be asked again on the next run.
+- **Expect 5–15 minutes.** A run fans out research across several streams and then synthesizes. It is a long agentic session, not a chat reply — start it when it can be the main thing your harness is doing for that hour.
+- **Nothing is hosted.** Runs on your subscription and your machine. The only optional key is Grok's, for the live-X read; without it that stream is skipped and everything else still runs.
+
 ## Configure
 
 Copy the example to your private state directory:
@@ -176,6 +183,7 @@ The CLI rejects corroborated claims with fewer than two distinct sources and dea
 - Give financing, acquisition, partnership, and IPO status an as-of date.
 - Record access failures as source-health events rather than silently dropping a stream.
 - Treat stars, trending positions, likes, and downloads as discovery signals—not proof of quality.
+- Before calling any repository's growth inauthentic, run four ordered checks: `has_issues` (a zero issue count is meaningless if issues are disabled), fork count (forks are far harder to fake than stars), owner type and homepage (an organization with a homepage on its own domain is near-dispositive), and commit history (a repo created last week can hold a year of work). If the checks conflict, say what could not be verified rather than implying fraud.
 
 ## Model and cost tiering
 
