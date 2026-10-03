@@ -18,6 +18,8 @@ Gather these streams independently before ranking:
 - Hacker News front page, `/show`, and recent high-signal results.
 - Personalized GitHub and Hugging Face releases/trending candidates.
 - Model routers, coding-harness usage leaderboards, and independent benchmarks.
+- Lab research publications (research, interpretability, alignment, and evaluation posts; system cards), checked separately from product announcements.
+- Measurement, forecasts, and public wagers: independent trend trackers, autonomy evaluations, published forecast models, and prediction markets.
 - Reputable AI funding, partnership, policy, and regulation coverage.
 - Consulting, macro, capital-markets, M&A/VC, career, and established-stack sources.
 - Optional live-X pass through Grok.
@@ -72,6 +74,29 @@ Sweep each run and report only what changed:
 - **Agentic-coding benchmarks.** Report real state-of-the-art changes; ignore ordinary movement.
 
 Discipline for this stream: it is a **discovery channel, not an authority**. Token share and leaderboard placement tell you what is being used and what scores well. Neither is evidence that a model is good, safe, or of known provenance. When surfacing an unclaimed or codenamed model, state plainly that its origin is unverified, and note the fingerprinting theories rather than asserting one. **Free frontier inference is generally paid for in training data**—whenever a zero-cost model is surfaced, make the data-retention implication explicit alongside the capability, so a reader does not route sensitive work to it on the strength of the write-up. Keep this section to a few items; zero is a valid result.
+
+### Lab research publications
+
+A newsroom sweep catches launches. It misses research, interpretability, alignment and evaluation papers, which are often the more consequential output. Each run, check every major lab's *research* surface for posts dated in the window. For example:
+
+- Anthropic: research, alignment and interpretability sites.
+- OpenAI: research index and alignment blog.
+- Google DeepMind: research pages.
+- System cards and safety-evaluation reports from any lab.
+
+Write up anything substantive in one line with a primary link: a new technique, a measured capability or safety finding, or an incident post-mortem. Label lab findings self-reported until an outside party reproduces them. "No new research posts from <lab> in window" is a valid line.
+
+### Measurement, forecasts, and public wagers
+
+Scoreboards answer "what scores well this week." None of them answers "what is happening to the trend line," and that gap lets large lab self-claims pass with no independent measurement nearby. Check each run and report only what moved:
+
+- **Independent trend trackers** (for example Epoch AI: capability indices, compute and efficiency trends, frontier math benchmarks). Note who funds the tracker, and any benchmark co-developed with a lab whose models it scores.
+- **Autonomy and time-horizon evaluations** (for example METR). Every run, record three things: the top model, its headline horizon, and the page's last-updated date. Compare them with the previous run. If nothing changed, say so in one line. Carry the evaluator's own reliability caveats near the top of its task suite.
+- **Published forecast models and scenario self-grading** (for example the AI Futures Project, authors of *AI 2027*). Watch for three things: updates to their timelines-and-takeoff model, re-grades of scenario predictions against reality, and milestones met or missed. These are **theses, not facts**; classify them that way. Prefer the authors' own grading over third-party trackers.
+- **Forecasting platforms and public wagers** (for example Metaculus, Manifold, Polymarket, named public bets). Report only material moves: a community median shifting six months or more, a probability moving ten points or more, or a bet resolving. Put an as-of date on every number. Odds are sentiment, not evidence, so pair a large move with the event that drove it.
+- **Annual reports** (for example the Stanford AI Index): one item when published, otherwise silent.
+
+**Staleness is a finding.** If a trend page or horizon chart hasn't moved since the last run, write "stale since <date>" in one line. A frozen measurement during a month of frontier releases is information. A trend finding that contradicts a lab claim belongs next to that claim, not in a separate section. Zero or one item most weeks is expected.
 
 ## 3. Normalize and deduplicate
 
@@ -132,6 +157,7 @@ Repeated failure is a routing signal. It does not make the source unreliable; it
 - What AI-native builders are shipping or debating.
 - Personalized GitHub and Hugging Face signal.
 - Router, leaderboard, and unannounced-release signal.
+- Lab research publications, measurement trends, forecasts, and public wagers.
 - AI funding, partnerships, policy, and regulation.
 - Two or three cross-cutting patterns.
 

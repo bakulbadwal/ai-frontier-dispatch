@@ -92,6 +92,7 @@ Use repeated `--source` arguments for corroboration. Corroborated claims require
 - AI-native builders and researchers
 - personalized GitHub and Hugging Face signal
 - router, leaderboard, and unannounced-release signal
+- lab research publications, measurement trends, forecasts, and public wagers
 - AI funding, partnerships, policy, and regulation
 - two or three cross-cutting patterns
 
