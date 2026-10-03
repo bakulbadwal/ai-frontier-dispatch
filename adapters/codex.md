@@ -21,6 +21,11 @@ Use this adapter when running AI Frontier Dispatch in Codex.
 - Run `scripts/grok-x-pass.py` only when the local key exists and the user has authorized the external API call.
 - Run `scripts/state.py` locally for run state, source health, and claim-evidence records.
 
+## Dashboard
+
+- When `dashboard.enabled` is true, write the issue JSON and serve the folder locally, for example `python3 -m http.server 8790 --directory dashboard`, then point the reader at `http://localhost:8790`.
+- Opening `index.html` straight from disk does not work in most browsers, because the page fetches its issue files.
+
 ## Degradation
 
 - Never invent a connector or unavailable tool.

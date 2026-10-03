@@ -55,6 +55,13 @@ thesis_watch:
     - "Indicator, current baseline, and date"
   rule: "Report only movement since the previous run. Zero lines is valid."
 
+dashboard:
+  enabled: false
+  # Claude Code: the private Artifact URL to update each run. Leave it empty
+  # on the first run; the adapter publishes once, and you paste the URL here
+  # so every later run updates the same link.
+  artifact_url: ""
+
 state:
   enabled: true
   # Default: ~/.ai-frontier-dispatch/events.jsonl

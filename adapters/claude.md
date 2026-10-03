@@ -21,6 +21,13 @@ Use this adapter when running AI Frontier Dispatch in Claude Code.
 - Run `scripts/grok-x-pass.py` only when `XAI_API_KEY` is available.
 - Run `scripts/state.py` through Bash for state and evidence records.
 
+## Dashboard
+
+- When `dashboard.enabled` is true, publish `dashboard/index.html` as a private Artifact with `dashboard/issues/` as supporting files.
+- If `dashboard.artifact_url` is set, read that artifact first, then publish with that URL so the link stays the same every run. Once a URL exists, never publish without it; that creates a second artifact.
+- On the first run, publish without a URL and tell the reader to save the returned URL in `dashboard.artifact_url`.
+- If publishing fails, say so in the run notes. The markdown digest is still the deliverable.
+
 ## Degradation
 
 - If subagents are unavailable, parallelize independent searches where possible and synthesize in the main context.

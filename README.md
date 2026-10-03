@@ -14,6 +14,12 @@ AI Frontier Dispatch gathers frontier releases, builder signal, repositories, ma
 
 ### [Read a real digest →](digests/2026-07-28.md)
 
+## What changed in v2.2
+
+- An optional interactive dashboard. The highest-scoring items across both parts come first, followed by section navigation, search, confidence and tag filters, collapsible items, and an issue switcher.
+- `dashboard/index.html` is a fixed template. Each run writes one JSON issue that follows `schemas/dashboard-issue.schema.json`, so the design never drifts between runs.
+- In Claude Code the page publishes as a private Artifact at one stable link; elsewhere it serves from a local folder. [`dashboard/issues/2026-09-26.json`](dashboard/issues/2026-09-26.json) is a real issue.
+
 ## What changed in v2.1
 
 - The distribution layer is now a first-class stream: router new-and-trending listings, usage leaderboards ranked by token share, and independent benchmark aggregators.
@@ -202,11 +208,13 @@ Research fan-out is ingestion; final synthesis is judgment. Use a cost-efficient
 | `schemas/` | Claim, source, and run contracts |
 | `scripts/grok-x-pass.py` | Optional live-X pass through xAI |
 | `digests/` | Example and archived briefing output |
+| `dashboard/` | Optional interactive page: fixed template plus one JSON file per issue |
+| `schemas/dashboard-issue.schema.json` | Contract for a dashboard issue |
 
 ## Validation
 
 ```bash
-python3 -m unittest -v tests/test_state.py
+python3 -m unittest -v tests/test_state.py tests/test_dashboard.py
 python3 /path/to/skill-creator/scripts/quick_validate.py .
 ```
 

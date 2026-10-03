@@ -108,6 +108,16 @@ Use repeated `--source` arguments for corroboration. Corroborated claims require
 
 Use a hard visual divider. Prefer one-line takeaways with direct links. Label changing or single-source claims inline. Say “nothing new in this window” when true. Never pad a quiet section.
 
+## Render the dashboard (optional)
+
+When `dashboard.enabled` is true, also render the digest as an interactive page. `dashboard/index.html` is a fixed template; each run writes data, not design.
+
+1. Write `dashboard/issues/<YYYY-MM-DD>.json` following `schemas/dashboard-issue.schema.json`. Every item in the digest appears in it, with its pre-filter score (including the corroboration point), its confidence label (`verified`, `reported` or `unverified`, matching the inline label), a one-sentence takeaway as `dek`, and the detail as `body`.
+2. Set `top` to the five or six most important item ids across both parts, in reading order. Readers start there and may stop there, so rank by what the reader most needs to know.
+3. Append the issue to `dashboard/issues/index.json`, keeping older entries for the issue switcher.
+4. Check that every `top` id exists and no id repeats. In a clone, `python3 -m unittest tests/test_dashboard.py` does this.
+5. Hand the page to the reader using the adapter's method. The template fetches its issue files, so it needs a web origin rather than a `file://` path.
+
 ## Close the run
 
 When the digest is complete, save it only if repository writes are authorized, then run:
